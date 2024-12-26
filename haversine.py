@@ -16,5 +16,4 @@ def haversine(coord1 , coord2):
     R = 6378
 
     d = 2*R*asin(sqrt(H))
-    
-    print(d," km")
+    return d
