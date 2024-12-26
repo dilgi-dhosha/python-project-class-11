@@ -1,0 +1,9 @@
+ISS project mein basically program ek random country ko choose karta hai, aur humme uss country ko guess karna hai. program humme hints dega in the form of distance between our guess and the correct answer.
+
+haversine wala program distance calculation keliye hai
+countries wala program bus ek dictionary with the name and latitude and longitude of the country
+python project class 11 main project file hai
+
+Abhi bohot basic basic hai, Dheere Dheere aur detail mein kardunga
+
+yeh code wagera padhna hai toh padliyo kaafi interesting hai imo
