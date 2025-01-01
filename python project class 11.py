@@ -1,25 +1,27 @@
 import random
-from countries import countries
+from countries import *
 from haversine import haversine
 
 C=random.choice(list(countries.keys()))
 
-print('''Welcome! In this game, there will be a random country that is chosen from the 195 countries and
-it is your job to guess which country we have picked. If your guess is incorrect, we will provide you
-with a hint in the form of the distance between the correct country and the the country you guessed.
-If you are a bitch ass nigga that doesn't know his geography, then you type 'reveal' to reveal the
-answer.''')
+print('''In this game, a random country will be selected from the 195 recognized nations, and it will be your
+task to guess which country has been chosen. If your guess is incorrect, a hint will be provided in
+the form of the distance between the correct country and the one you guessed.
+
+If you're unable to make a correct guess, you can type "reveal" to see the answer.''')
 print()
 YN = input("Ready to play?")
 yn = YN.lower()
 if yn == 'yes':
+    n=0
     while 1>0:
-        n=0
         g = input("Enter your guess:")
-        Guess = g.lower()
+        Guess = alias(g.lower())
         if Guess in countries:
+            n=n+1
             if Guess == C:
-                print("Good job nigga 😘😘😘")
+                print("Good job, The correct country was", C)
+                print("It took", n," attempts")
                 break
             else:
                 d =  haversine(countries[C], countries[Guess])
@@ -27,7 +29,9 @@ if yn == 'yes':
                 print()
         elif Guess not in countries:
             if Guess == "reveal":
-                print(C)
+                n=n+1
+                print("The correct country was", C)
+                print("It took", n," attempts")
                 break
             else:
                 print("thats not a real country")
