@@ -15,5 +15,5 @@ def haversine(coord1 , coord2):
     H = hav(delta_phi) + cos(lat1)*cos(lat2)*hav(delta_lambda)
     R = 6378
 
-    d = 2*R*asin(sqrt(H))
+    d = round(2*R*asin(sqrt(H)), 2)
     return d
