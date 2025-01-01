@@ -1,4 +1,4 @@
-countries = {'afghanistan':(33.93911, 67.709953), 'albania':(41.1533, 20.1683), 'algeria':(28.0339, 1.6596), 'andorra':(42.5078, 1.5211),
+countries = {'afghanistan':(33.93911, 67.709953), 'albania':(41.1533, 20.1683), 'algeria':(28.0339, 1.6596), 'andorra':(42.5078, 1.601554),
     'angola':(-11.2027, 17.8739), 'antigua and barbuda':(17.0608, -61.7964), 'argentina':(-38.4161, -63.6167), 'armenia':(40.0691, 45.0382),
     'australia':(-25.2744, 133.7751), 'austria':(47.5162, 14.5501), 'azerbaijan':(40.1431, 47.5769), 'bahamas':(25.0343, -77.3963),
     'bahrain':(25.9304, 50.6378), 'bangladesh':(23.685, 90.3563), 'barbados':(13.1939, -59.5432), 'belarus':(53.9, 27.5667),
@@ -19,7 +19,7 @@ countries = {'afghanistan':(33.93911, 67.709953), 'albania':(41.1533, 20.1683), 
     'honduras':(13.9094, -83.4337), 'hungary':(47.1625, 19.5033), 'iceland':(64.9631, -19.0208), 'india':(20.5937, 78.9629),
     'indonesia':(-0.7893, 113.9213), 'iran':(32.4279, 53.688), 'iraq':(33.2232, 43.6793), 'ireland':(53.4129, -8.243),
     'israel':(31.0461, 34.8516), 'italy':(41.8719, 12.5674), 'jamaica':(18.1096, -77.2975), 'japan':(36.2048, 138.2529),
-    'jordan':(30.5852, 36.2384), 'kazakhstan':(48.0196, 66.9237), 'kenya':(1.2921, 36.8219), 'kiribati':(1.4167, 173.0000),
+    'jordan':(30.5852, 36.2384), 'kazakhstan':(48.0196, 66.9237), 'kenya':(-0.023559, 37.906193), 'kiribati':(1.4167, 173.0000),
     'north korea':(40.3399, 127.5101), 'south korea':(35.9078, 127.7669),'kosovo':(42.60263, 20.9029), 'kuwait':(29.3759, 47.9774), 'kyrgyzstan':(41.2044, 74.7661),
     'laos':(19.8563, 102.4955), 'latvia':(56.8796, 24.6032), 'lebanon':(33.8547, 35.8623), 'lesotho':(-29.6099, 28.2336),
     'liberia':(6.4281, -9.4295), 'libya':(26.3351, 17.2283), 'liechtenstein':(47.1660, 9.5554), 'lithuania':(55.1694, 23.8813),
@@ -45,5 +45,17 @@ countries = {'afghanistan':(33.93911, 67.709953), 'albania':(41.1533, 20.1683), 
     'tonga':(-21.1789, -175.1982), 'trinidad and tobago':(10.6918, -61.2225), 'tunisia':(33.8869, 9.5375), 'turkey':(38.9637, 35.2433),
     'turkmenistan':(38.9697, 59.5563), 'tuvalu':(-7.1095, 177.6493), 'uganda':(1.3733, 32.2903), 'ukraine':(48.3794, 31.1656),
     'united arab emirates':(23.4241, 53.8478), 'united kingdom':(55.3781, -3.4360), 'united states':(37.0902, -95.7129), 'uruguay':(-32.5228, -55.7658),
-    'uzbekistan':(41.3775, 64.5853), 'vanuatu':(-15.3767, 166.9592), 'venezuela':(6.4238, -66.5897), 'vietnam':(14.0583, 108.2772),
+    'uzbekistan':(41.3775, 64.5853), 'vanuatu':(-15.3767, 166.9592), 'vatican city':(41.902916, 12.453389), 'venezuela':(6.4238, -66.5897), 'vietnam':(14.0583, 108.2772),
     'yemen':(15.5520, 48.5164), 'zambia':(-13.1339, 27.8493), 'zimbabwe':(-19.0154, 29.1549)}
+
+country_aliases = {'antigua': 'antigua and barbuda', 'barbuda': 'antigua and barbuda', 'bosnia': 'bosnia and herzegovina',
+    'herzegovina': 'bosnia and herzegovina', 'cape verde': 'cabo verde', 'car': 'central african republic', 'czechia': 'czech republic', 'drc': 'democratic republic of the congo',
+    'guinea bissau': 'guinea-bissau', 'st kitts': 'saint kitts and nevis', 'saint kitts': 'saint kitts and nevis', 'st lucia': 'saint lucia', 'saint vincent': 'saint vincent and the grenadines',
+    'st vincent': 'saint vincent and the grenadines', 'sao tome': 'sao tome and principe', 'timor leste': 'timor-leste', 'trinidad': 'trinidad and tobago', 'tobago': 'trinidad and tobago',
+    'uae': 'united arab emirates', 'uk': 'united kingdom', 'usa': 'united states', 'us': 'united states', 'united states of america': 'united states', 'holy see': 'vatican city'}
+
+def alias(country):
+    if country in country_aliases:
+        country = country_aliases[country]
+
+    return country
